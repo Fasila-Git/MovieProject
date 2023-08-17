@@ -23,6 +23,7 @@ def add_movie(request):
         movieImg = request.FILES['image']
         moviesAdded=Movie(name=movieName,desc=moviedesc,year=movieYear,img=movieImg)
         moviesAdded.save()
+        return redirect('/')
 
     return render(request,'add.html')
 
